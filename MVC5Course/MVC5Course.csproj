@@ -235,7 +235,6 @@
     </Compile>
     <Compile Include="Models\LoginVM.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\MyDataTypeAttribute.cs" />
     <Compile Include="Models\Occupation.cs">
       <DependentUpon>Fabrics.tt</DependentUpon>
     </Compile>
@@ -245,6 +244,7 @@
     <Compile Include="Models\OccupationRepository.cs">
       <DependentUpon>IRepository.EF6.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\OddNumberAttribute.cs" />
     <Compile Include="Models\Order.cs">
       <DependentUpon>Fabrics.tt</DependentUpon>
     </Compile>

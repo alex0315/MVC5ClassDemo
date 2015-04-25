@@ -48,7 +48,6 @@ namespace MVC5Course.Models
         public string City { get; set; }
         
         [StringLength(15, ErrorMessage="欄位長度不得大於 15 個字元")]
-        [MyDataType(ErrorMessage = "欄位需為偶數")]
         public string ZipCode { get; set; }
 
         public Nullable<double> Longitude { get; set; }
