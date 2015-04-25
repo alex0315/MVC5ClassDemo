@@ -6,15 +6,10 @@ using System.Web.Mvc;
 
 namespace MVC5Course.Controllers
 {
-    public class JQueryController : BaseController
+    public class ARController : Controller
     {
-        // GET: JQuery
+        // GET: AR
         public ActionResult Index()
-        {
-            return View();
-        }
-
-        public ActionResult each()
         {
             return View();
         }

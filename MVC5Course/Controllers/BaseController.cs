@@ -6,11 +6,7 @@ using System.Web.Mvc;
 
 namespace MVC5Course.Controllers
 {
-    public class TestController : BaseController
+    public abstract class BaseController : Controller
     {
-        public ActionResult Index()
-        {
-            return View();
-        }
     }
 }
