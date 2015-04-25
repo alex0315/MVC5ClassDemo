@@ -11,8 +11,8 @@ namespace MVC5Course.Models
     
     public partial class ClientMetaData
     {
-        //[Required]
-        //public int ClientId { get; set; }
+        [Required]
+        public int ClientId { get; set; }
 
         [Required]
         [StringLength(40, ErrorMessage="欄位長度不得大於 40 個字元")]
@@ -31,6 +31,8 @@ namespace MVC5Course.Models
         
         [StringLength(7, ErrorMessage="欄位長度不得大於 7 個字元")]
         public string XCode { get; set; }
+
+        
         public Nullable<int> OccupationId { get; set; }
         
         [StringLength(20, ErrorMessage="欄位長度不得大於 20 個字元")]
@@ -46,7 +48,9 @@ namespace MVC5Course.Models
         public string City { get; set; }
         
         [StringLength(15, ErrorMessage="欄位長度不得大於 15 個字元")]
+        [MyDataType(ErrorMessage = "欄位需為偶數")]
         public string ZipCode { get; set; }
+
         public Nullable<double> Longitude { get; set; }
         public Nullable<double> Latitude { get; set; }
         public string Notes { get; set; }
