@@ -12,7 +12,7 @@ namespace MVC5Course.Controllers
 {
     public class ProductsController : BaseController
     {
-        // GET: Products
+        [RequireHttps]
         public ActionResult Index()
         {
             return View(db.Product.Take(10).ToList());
