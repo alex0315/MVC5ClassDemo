@@ -12,12 +12,10 @@ namespace MVC5Course.Controllers
 {
     public class ProductsController : BaseController
     {
-        private FabricsEntities db = new FabricsEntities();
-
         // GET: Products
         public ActionResult Index()
         {
-            return View(db.Product.ToList());
+            return View(db.Product.Take(10).ToList());
         }
 
         // GET: Products/Details/5
@@ -78,14 +76,16 @@ namespace MVC5Course.Controllers
         // 詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProductId,ProductName,Price,Active,Stock")] Product product)
+        public ActionResult Edit(int id)
         {
-            if (ModelState.IsValid)
+            var product = db.Product.Find(id);
+
+            if (TryUpdateModel<Product>(product, new string[] { "ProductName", "Price", "Stock" }))
             {
-                db.Entry(product).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
             return View(product);
         }
 
