@@ -79,5 +79,37 @@ namespace MVC5Course.Controllers
                 item2.Username,
                 item2.Password));
         }
+
+        public ActionResult Complex3()
+        {
+            var data = from c in db.Client.Take(10)
+                       select new Simple1ViewModel
+                       {
+                           Username = c.FirstName,
+                           Password = c.LastName,
+                           Age = 20
+                       };
+
+            return View(data);
+        }
+
+        [HttpPost]
+        public ActionResult Complex3(IList<Simple1ViewModel> item)
+        {
+            return Content("");
+        }
+
+        public ActionResult Complex4()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Complex4(
+            [Bind(Prefix="item1")]
+            Simple1ViewModel item)
+        {
+            return Content(string.Format("Complex4 {0} : {1}", item.Username, item.Password));
+        }
     }
 }
