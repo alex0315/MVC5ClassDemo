@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVC5Course.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -29,6 +30,54 @@ namespace MVC5Course.Controllers
             ViewBag.Message3 = Session["Message3"];
 
             return View();
+        }
+
+        public ActionResult Simple1()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Simple1(string Username, string Password)
+        {
+            return Content(string.Format("Simple1 {0} : {1}", Username, Password));
+        }
+
+        public ActionResult Simple2()
+        {
+            return View("Simple1");
+        }
+
+        [HttpPost]
+        public ActionResult Simple2(FormCollection form)
+        {
+            return Content(string.Format("Simple2 {0} : {1}", form["Username"], form["Password"]));
+        }
+
+        public ActionResult Complex1()
+        {
+            return View("Simple1");
+        }
+
+        [HttpPost]
+        public ActionResult Complex1(Simple1ViewModel item)
+        {
+            return Content(string.Format("Complex1 {0} : {1}", item.Username, item.Password));
+        }
+
+        public ActionResult Complex2()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Complex2(Simple1ViewModel item1, Simple1ViewModel item2)
+        {
+            return Content(string.Format("Complex2 item1 {0} : {1}<br/>item2 {2} : {3}",
+                item1.Username,
+                item1.Password,
+                item2.Username,
+                item2.Password));
         }
     }
 }
