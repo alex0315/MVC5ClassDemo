@@ -111,5 +111,22 @@ namespace MVC5Course.Controllers
         {
             return Content(string.Format("Complex4 {0} : {1}", item.Username, item.Password));
         }
+
+        public ActionResult Complex5()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Complex5(FormCollection form)
+        {
+            var item = new Simple1ViewModel();
+            if (TryUpdateModel<Simple1ViewModel>(item))
+            {
+                return RedirectToAction("Complex5");
+            }
+
+            return View(item);
+        }
     }
 }
