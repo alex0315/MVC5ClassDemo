@@ -18,3 +18,29 @@ else
 {
 @:ViewBag是null!
 }
+
+Will Answer
+<hr />
+@{
+    var num = (int[])ViewBag.num;
+}
+@foreach (var item in num)
+{
+    @item
+}
+
+
+
+@foreach (var item in num)
+{
+    @(item + " ")
+}
+
+
+
+<ul>
+@foreach (var item in num)
+{
+  <li>@item</li>
+}
+</ul>
