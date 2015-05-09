@@ -134,7 +134,9 @@
 
     <h4>Order List</h4>
     <hr />
-    @Html.Action("Index", "Orders", new { clientId = Model.ClientId })
+    @*@Html.Action("Index", "Orders", new { clientId = Model.ClientId })*@
+    @Html.Partial("OrderList", Model.Order.ToList())
+
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ClientId }) |
