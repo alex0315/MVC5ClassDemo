@@ -1,0 +1,20 @@
+﻿@if (ViewBag.num != null)
+{
+    foreach (var item in ViewBag.num) { @(item) }
+@:
+@:
+foreach (var item in ViewBag.num){ @(item + " ") }
+@:
+@:
+<ul>
+@{
+foreach (var item in ViewBag.num)
+    {
+  <li>@item</li>
+    }
+}</ul>
+}
+else
+{
+@:ViewBag是null!
+}

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace MVC5Course.ActionFilter
+namespace MVC5Course.ActionFilters
 {
     public class LoggerAttribute : ActionFilterAttribute
     {
