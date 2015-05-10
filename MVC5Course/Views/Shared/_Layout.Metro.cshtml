@@ -31,9 +31,6 @@
     <link rel="shortcut icon" href="/img/favicon.ico">
     <!-- end: Favicon -->
 
-
-
-
 </head>
 <body>
     <!-- start: Header -->
@@ -408,7 +405,12 @@
     </footer>
 
     <!-- start: JavaScript-->
-    <script src="/js/jquery-1.9.1.min.js"></script>
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/metrojs")
+
+    @*<script src="/js/jquery-1.9.1.min.js"></script>
     <script src="/js/jquery-migrate-1.0.0.min.js"></script>
 
     <script src="/js/jquery-ui-1.10.0.custom.min.js"></script>
@@ -459,7 +461,7 @@
     <script src="/js/counter.js"></script>
 
     <script src="/js/retina.js"></script>
-    <script src="/js/custom.js"></script>
+    <script src="/js/custom.js"></script>*@
     <!-- end: JavaScript-->
 
     @RenderSection("scripts", required: false)
