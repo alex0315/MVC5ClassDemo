@@ -2,6 +2,10 @@
 @using PagedList
 @using PagedList.Mvc
 @{
+    if (IsAjax)
+    {
+        Layout = ""; 
+    }
     ViewBag.Title = "Index";
 }
 

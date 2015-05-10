@@ -53,6 +53,7 @@ namespace MVC5Course.Models
 
         public Nullable<double> Longitude { get; set; }
         public Nullable<double> Latitude { get; set; }
+        [ScaffoldColumn(false)]
         public string Notes { get; set; }
         [Required]
         public bool IsDelete { get; set; }
