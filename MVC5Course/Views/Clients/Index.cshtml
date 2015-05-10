@@ -64,7 +64,7 @@
     var data = Model as IPagedList<Client>;
 }
 
-@Html.PagedListPager(data, (p) => Url.Action("Index", new { pageNo = p }))
+@Html.PagedListPager(data, (p) => Url.Action("Index", new { pageNo = p }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing("#Main"))
 
 <hr />
 
