@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using MVC5Course.Models;
 using MVC5Course.ActionFilters;
+using PagedList;
 
 namespace MVC5Course.Controllers
 {
@@ -29,7 +30,7 @@ namespace MVC5Course.Controllers
         }
 
         // GET: Clients
-        public ActionResult Index(string city)
+        public ActionResult Index(string city, int pageNo = 1)
         {
             var client = repoClient.All().Include(c => c.Occupation);//.Where(c => c.Gender == gender).Take(10);
 
@@ -46,7 +47,7 @@ namespace MVC5Course.Controllers
 
             ViewBag.Cities = new SelectList(cityList, "City", "City", city);
 
-            return View(client.Take(10).ToList());
+            return View(client.ToPagedList(pageNo, 10));
         }
 
         // GET: Clients/Details/5
