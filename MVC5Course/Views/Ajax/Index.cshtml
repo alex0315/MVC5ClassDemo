@@ -13,4 +13,14 @@
 
 <div id="now"></div>
 
+<hr />
 
+@Ajax.ActionLink("取得Json", "GetJson", new AjaxOptions() { HttpMethod = "Post", OnSuccess = "getResult" })
+
+<hr />
+
+<script>
+    function getResult(data) {
+        alert(data.result);
+    }
+</script>
